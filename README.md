@@ -61,9 +61,9 @@ https://class.coursera.org/getdata-002/forum/thread?thread_id=396
 
 5. In order to create the second independent tidy data set with the average of each variable for each activity and each subject the final subsetted data used for tidy data set 1 'uciHarMeanSdDataFull.csv' was restructured using the melt and dcast functions in Hadley Wickham's reshape2 package using the casting formula: subjectID ~ activityID + variable, resulting in a data set with 30 rows (one for each subject) and 517 columns, where each column measure was appended with one of the 6 activities performed by the subject (6 activities * 86 variables = 516 + 1 subject ID = 517 **note:** activityID is eliminated since this information is merged with the variable names.  This data set was then written to the file 'uciHarDataSubbyActMean.csv'.
 This format was based on the tidy data principles as explained below:
-1. Each variable forms a column.
-2. Each observation forms a row.
-3. Each type of observational unit forms a table.
+  1. Each variable forms a column.
+  2. Each observation forms a row.
+  3. Each type of observational unit forms a table.
 Observational units are something like (a person, or a day, or a race) across attributes.
 So, in 'uciHarDataSubbyActMean.csv' the observational unit is the person which forms a row and the variables measure each person's movement (in various ways) across different activities. For additional discussion of this topic see:
 https://class.coursera.org/getdata-002/forum/thread?thread_id=146#comment-934
