@@ -12,8 +12,7 @@ The project assignment is to:
 Prepare tidy data that can be used for later analysis using data at the below
 URL:
 
-https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Data
-set.zip
+https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 
 ## Project Requirements
 
@@ -114,7 +113,8 @@ forum thread below for additional discussion of this topic.
 https://class.coursera.org/getdata-002/forum/thread?thread_id=396
 
 5. In order to create the tidy data set with the average of
-each variable for each activity and each subject subMaster was restructured using the melt and dcast functions in Hadley Wickham's reshape2 package using the casting
+each variable for each activity and each subject subMaster was restructured using
+the melt and dcast functions in Hadley Wickham's reshape2 package using the casting
 formula: subjectID ~ activityID + variable, resulting in a data set with 30
 rows (one for each subject) and 517 columns, where each column measure was
 appended with one of the 6 activities performed by the subject (6 activities *

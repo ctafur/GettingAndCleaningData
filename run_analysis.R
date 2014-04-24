@@ -28,24 +28,22 @@
 ###############################################################################
 #                             Data Download                                   #
 ###############################################################################
-#                                                                             #
-#  # Set the URL                                                              #
-#  url<-"https://d396qusza40orc.cloudfront.net/                               #
-#  getdata%2Fprojectfiles%2FUCI%20HAR%2# 0Dataset.zip"                        #
-#                                                                             #
-#  #Download the file                                                         #
-#  download.file(url,"Dataset.zip")                                           #
-#                                                                             #
-#  # Set a time stamp                                                         #
-#  downloadTime<-Sys.time()                                                   #
-#                                                                             #
-#  # Print the time stamp to the console                                      #
-#  downloadTime                                                               #
-#                                                                             #
-#  # For the original script the file was downloaded:                         #
-#  # 2014-04-21 01:07:46 EDT                                                  #
-#                                                                             #
-###############################################################################
+
+# Set the URL
+# url<-"https://d396qusza40orc.cloudfront.net
+# /getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
+
+#Download the file
+#  download.file(url,"Dataset.zip")
+
+# Set a time stamp
+# downloadTime<-Sys.time()
+
+# Print the time stamp to the console
+# downloadTime
+
+# For the original script the file was downloaded:
+# 2014-04-21 01:07:46 EDT
 
 ###############################################################################
 #                        Check Packages Are Installed                         #
@@ -218,7 +216,7 @@ write.table(meanSet, file="uciHarbySubActMean.txt", sep="\t", row.names=F)
 
 ###############################################################################
 #                       Output additional data sets                           #
-#                Unconmment where indicated for other data sets               #
+#                Uncomment where indicated for other data sets                #
 ###############################################################################
 
 # Write the full data set to a tab delimited txt file.
