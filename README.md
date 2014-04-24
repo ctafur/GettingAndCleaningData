@@ -64,13 +64,11 @@ all performed and are documented in the file **run_analysis.R**).
 Based on the **Data Set Instructions** above, the following interpretations /
 decisions were made:
 
-1. **run_analysis.R** downloads the data set from the URL provided, reads the
-main files for the training and test data sets, and merges the test and
-training data sets to create a master data set (masterData in the
-run_analysis.R file) that is 10299 rows by 563 columns.  That is 7352 rows for
-the training set + 2947 rows for the test set for 10299 rows.  And 561 columns
-from the main data files + 1 subjectID column and 1 activityID column for 563
-columns.
+1. **run_analysis.R** merges the test and training data sets to create a master
+data set (masterData in the run_analysis.R file) that is 10299 rows by 563 columns
+That is 7352 rows for the training set + 2947 rows for the test set for 10299 rows
+And 561 columns from the main data files + 1 subjectID column and 1 activityID
+column for 563 columns.
 
   The complete data package includes a folder labeled "InertialSignals" in both
   the training and test folders.  After reviewing the course discussion forums
@@ -101,9 +99,7 @@ dropped rather than exclude information that might be required.
   In accordance with this instruction the master data set 'masterData' was
   subsetted to include only these 86 variables plus the subject and activity
   ID's for a total of 10299 rows by 88 columns.  This subsetting is reflected
-  in **run_analysis.R** as subMaster.  After additional processng
-  (run_analysis.R) this subset is written to the file
-  'uciHarMeanSdDataFull.csv' as tidy data set 1.
+  in **run_analysis.R** as subMaster.
 
 3. In order to label activities in the data set the 'activity_labels.txt' file
 was imported from the downloaded data and used to label the activity ID's
@@ -117,16 +113,14 @@ was labeled with activity labels as described above.  Please see the discussion
 forum thread below for additional discussion of this topic.
 https://class.coursera.org/getdata-002/forum/thread?thread_id=396
 
-5. In order to create the second independent tidy data set with the average of
-each variable for each activity and each subject the final subsetted data used
-for tidy data set 1 'uciHarMeanSdDataFull.csv' was restructured using the melt
-and dcast functions in Hadley Wickham's reshape2 package using the casting
+5. In order to create the tidy data set with the average of
+each variable for each activity and each subject subMaster was restructured using the melt and dcast functions in Hadley Wickham's reshape2 package using the casting
 formula: subjectID ~ activityID + variable, resulting in a data set with 30
 rows (one for each subject) and 517 columns, where each column measure was
 appended with one of the 6 activities performed by the subject (6 activities *
 86 variables = 516 + 1 subject ID = 517 **note:** activityID is eliminated
 since this information is merged with the variable names.  This data set was
-then written to the file 'uciHarDataSubbyActMean.csv'.
+then written to the file 'uciHarbySubActMean.txt'.
 
   This format was based on the tidy data principles as explained below:
   1. Each variable forms a column.
@@ -136,12 +130,16 @@ then written to the file 'uciHarDataSubbyActMean.csv'.
   Observational units are something like (a person, or a day, or a race) across
   attributes.
 
-  So, in 'uciHarDataSubbyActMean.csv' the observational unit is the person
+  So, in 'uciHarbySubActMean.txt' the observational unit is the person
   which forms a row and the variables measure each person's movement (in
   various ways) across different activities. For additional discussion of this
   topic see:
 
   https://class.coursera.org/getdata-002/forum/thread?thread_id=146#comment-934
 
-
+Finally, since there was some ambiguity about which data sets should be exported
+additional commands are included at the bottom of **run_analysis.R** to produce 
+the full data set as well as the full data set with means and standard deviations
+extracted as tab delimited files.  These commands are commented out, but may be
+commented back in to write these files.
 
