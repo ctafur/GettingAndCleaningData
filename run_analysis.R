@@ -4,7 +4,8 @@
 # from the below URL, using the commented commands.                           #
 #                                                                             #
 # 1. The script reads a training and test set from this file, and recombines  #
-#    the files into a full data set.                                          #                         #                                                                             #
+#    the files into a full data set.                                          #
+#                                                                             #
 # 2. Once complete this data is subsetted to include only variables           #
 #    concerning the mean and standard deviation.                              #
 #                                                                             #
@@ -14,7 +15,7 @@
 #   Variable names are cleaned up to be more easily read.                     #
 #                                                                             #
 # 5. Finally the data set is reshaped to form a tidy data                     #
-#    set with the average of each variable for each activity and each subject.# 
+#    set with the average of each variable for each activity and each subject.#
 #    This data set is then written to a tab delimited file.                   #
 #                                                                             #
 # Alternate larger data sets may be written to file by uncommenting code      #
@@ -43,7 +44,7 @@
 #                                                                             #
 #  # For the original script the file was downloaded:                         #
 #  # 2014-04-21 01:07:46 EDT                                                  #
-#                                                                             # 
+#                                                                             #
 ###############################################################################
 
 ###############################################################################
@@ -96,28 +97,28 @@ colNames[["colName"]]<-sub("..","",colNames[["colName"]], fixed=T)
 colNames[["colName"]]<-sub("\\.$","",colNames[["colName"]], fixed=F)
 
 # Lower case x's
-colNames[["colName"]]<-sub("X","x",colNames[["colName"]], fixed=F)
+colNames[["colName"]]<-sub("X","x",colNames[["colName"]], fixed=T)
 
 # Lower case y's
-colNames[["colName"]]<-sub("Y","y",colNames[["colName"]], fixed=F)
+colNames[["colName"]]<-sub("Y","y",colNames[["colName"]], fixed=T)
 
 # Lower case z's
-colNames[["colName"]]<-sub("Z","z",colNames[["colName"]], fixed=F)
+colNames[["colName"]]<-sub("Z","z",colNames[["colName"]], fixed=T)
 
 # Fix variable to include dot
 colNames[["colName"]]<-sub("tBodyAccJerkMeangravityMean",
-"tBodyAccJerkMean.gravityMean",colNames[["colName"]], fixed=F)
+"tBodyAccJerkMean.gravityMean",colNames[["colName"]], fixed=T)
 
 # Fix variable to include label Mean at end
 colNames[["colName"]]<-sub("angle.tBodyAccMean.gravity",
-"angle.tBodyAccMean.gravityMean",colNames[["colName"]], fixed=F)
+"angle.tBodyAccMean.gravityMean",colNames[["colName"]], fixed=T)
 
 # Fix variable to include label Mean at end
 colNames[["colName"]]<-sub(".gravityMean","BYgravityMean",
-colNames[["colName"]], fixed=F)
+colNames[["colName"]], fixed=T)
 
 # Fix variable to include label Mean at end
-colNames[["colName"]]<-sub("angle.","angleV",colNames[["colName"]], fixed=F)
+colNames[["colName"]]<-sub("angle.","angleV",colNames[["colName"]], fixed=T)
 
 ###############################################################################
 #     Get the subject ID's from the training and test set and combine         #
@@ -213,7 +214,7 @@ names(meanSet)<-sub("_",".",names(meanSet), fixed=F)
   
 # Write the tidy data set (with the average of each variable for each
 # activity and each subject) to a tab delimited text file.
-write.table(meanSet, file="uciHarbySubActMean.txt", sep="\t")
+write.table(meanSet, file="uciHarbySubActMean.txt", sep="\t", row.names=F)
 
 ###############################################################################
 #                       Output additional data sets                           #
@@ -222,10 +223,10 @@ write.table(meanSet, file="uciHarbySubActMean.txt", sep="\t")
 
 # Write the full data set to a tab delimited txt file.
 # Uncomment the line below for an output of the full data set.
-# write.table(masterData, file="uciHarFull.txt", sep="\t")
+# write.table(masterData, file="uciHarFull.txt", sep="\t",row.names=F)
 
 
 # Write data set (for the means and standard deviations) to a tab delimited 
 # text file.
 # Uncomment the line below for an output of the data set including mean and sd
-# write.table(subMaster, file="uciHarMeanSdDataFull.txt", sep="\t")
+# write.table(subMaster, file="uciHarMeanSdDataFull.txt", sep="\t",row.names=F)

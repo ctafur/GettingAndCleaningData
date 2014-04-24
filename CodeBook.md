@@ -4,10 +4,10 @@ Code Book
 The variables in this data set are best understood in parts separated by dots.
 The general format is:
 
-activityType.accelerometerMovementFeatureOrMeasure.statisticalValue.
-axialDirection
+**activityType.accelerometerMovementFeatureOrMeasure.statisticalValue.
+axialDirection**
 
-The one exception ot this scheme is subjectID which identifies subjects 1 through 30.
+The one exception to this scheme is subjectID which identifies subjects 1 through 30.
 
 ## Activity Type:
 
