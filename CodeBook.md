@@ -85,8 +85,8 @@ fBodyGyroMag
 
 fBodyGyroJerkMag
 
-Additional vectors were obtained by averaging the signals in a signal window
-sample. These are used on the angle() variable:
+** Additional vectors were obtained by averaging the signals in a signal window
+sample. These are used on the angle() variable:**
 
 gravityMean
 
@@ -98,8 +98,8 @@ tBodyGyroMean
 
 tBodyGyroJerkMean
 
-Angle variables denote the angle between the two vectors (V). Each vector is
-separated by (BY).
+**Angle variables denote the angle between the two vectors (V). Each vector is
+separated by (BY).**
 
 angleVtBodyAccMeanBYgravityMean
 
@@ -124,7 +124,9 @@ std = Standard Deviation
 ## Axial Direction: If present in the accelerometer movement feature above
 
 x
+
 y
+
 z
 
 ## Complete List of Variables
