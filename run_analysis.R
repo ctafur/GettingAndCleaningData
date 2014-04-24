@@ -79,10 +79,12 @@ colNames <- read.table(unz("Dataset.zip", filename=
 activityLabels[["activityLabel"]]<-tolower(activityLabels[["activityLabel"]])
 
 # Replace underscore with camelCaps for upstairs
-activityLabels[["activityLabel"]]<-sub("_u","U",activityLabels[["activityLabel"]], fixed=F)
+activityLabels[["activityLabel"]]<-sub("_u","U",
+activityLabels[["activityLabel"]], fixed=F)
 
 # Replace underscore with camelCaps for downstairs
-activityLabels[["activityLabel"]]<-sub("_d","D",activityLabels[["activityLabel"]], fixed=F)
+activityLabels[["activityLabel"]]<-sub("_d","D",
+activityLabels[["activityLabel"]], fixed=F)
 
 # Make column names sytactically valid
 colNames[["colName"]]<-make.names(colNames[["colName"]],unique=T)
@@ -103,18 +105,19 @@ colNames[["colName"]]<-sub("Y","y",colNames[["colName"]], fixed=F)
 colNames[["colName"]]<-sub("Z","z",colNames[["colName"]], fixed=F)
 
 # Fix variable to include dot
-colNames[["colName"]]<-sub("tBodyAccJerkMeangravityMean","tBodyAccJerkMean.gravityMean",colNames[["colName"]], fixed=F)
+colNames[["colName"]]<-sub("tBodyAccJerkMeangravityMean",
+"tBodyAccJerkMean.gravityMean",colNames[["colName"]], fixed=F)
 
 # Fix variable to include label Mean at end
-colNames[["colName"]]<-sub("angle.tBodyAccMean.gravity","angle.tBodyAccMean.gravityMean",colNames[["colName"]], fixed=F)
+colNames[["colName"]]<-sub("angle.tBodyAccMean.gravity",
+"angle.tBodyAccMean.gravityMean",colNames[["colName"]], fixed=F)
 
 # Fix variable to include label Mean at end
-colNames[["colName"]]<-sub(".gravityMean","BYgravityMean",colNames[["colName"]], fixed=F)
+colNames[["colName"]]<-sub(".gravityMean","BYgravityMean",
+colNames[["colName"]], fixed=F)
 
 # Fix variable to include label Mean at end
 colNames[["colName"]]<-sub("angle.","angleV",colNames[["colName"]], fixed=F)
-
-
 
 ###############################################################################
 #     Get the subject ID's from the training and test set and combine         #

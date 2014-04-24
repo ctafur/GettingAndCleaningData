@@ -85,7 +85,7 @@ fBodyGyroMag
 
 fBodyGyroJerkMag
 
-** Additional vectors were obtained by averaging the signals in a signal window
+**Additional vectors were obtained by averaging the signals in a signal window
 sample. These are used on the angle() variable:**
 
 gravityMean
