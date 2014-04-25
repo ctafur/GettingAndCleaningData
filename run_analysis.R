@@ -34,7 +34,7 @@
 # /getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
 
 #Download the file
-#  download.file(url,"Dataset.zip")
+# download.file(url,"Dataset.zip")
 
 # Set a time stamp
 # downloadTime<-Sys.time()
