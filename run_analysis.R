@@ -85,7 +85,7 @@ activityLabels[["activityLabel"]], fixed=F)
 activityLabels[["activityLabel"]]<-sub("_d","D",
 activityLabels[["activityLabel"]], fixed=F)
 
-# Make column names sytactically valid
+# Make column names sytactically valid and unique
 colNames[["colName"]]<-make.names(colNames[["colName"]],unique=T)
 
 # Remove excess .. from column names
